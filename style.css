@@ -118,6 +118,11 @@ input:focus {
 	gap: 10px;
 }
 
+.controls button {
+	flex: 1 1 140px;
+	min-width: 0;
+}
+
 button {
 	border: none;
 	border-radius: 10px;
@@ -219,7 +224,14 @@ tfoot td, tfoot th { background: rgba(124, 195, 255, 0.18); font-weight: 700; }
 }
 
 @media (max-width: 720px) {
-	body { padding: 18px; }
+	body { padding: 16px; }
+	.shell { gap: 12px; }
+	.hero { padding: 18px; }
 	h1 { font-size: 26px; }
-	.panel { padding: 16px; }
+	.panel { padding: 14px; border-radius: 12px; }
+	.controls { gap: 8px; }
+	.controls button { flex: 1 1 120px; }
+	input[type="number"], input[type="text"] { font-size: 16px; padding: 10px; }
+	th, td { padding: 10px 8px; font-size: 14px; white-space: normal; }
+	table { min-width: 360px; }
 }
