@@ -161,6 +161,10 @@ function addRound() {
 	renderTable();
 	showRoundError('');
 	inputs.forEach(input => input.value = '0');
+	if (inputs.length > 0) {
+		inputs[0].focus();
+		inputs[0].select();
+	}
 }
 
 function removePlayer(index) {
