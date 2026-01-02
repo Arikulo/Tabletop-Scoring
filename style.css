@@ -210,6 +210,7 @@ th {
 
 tbody tr:nth-child(odd) { background: rgba(255, 255, 255, 0.1); }
 tfoot td, tfoot th { background: rgba(124, 195, 255, 0.18); font-weight: 700; }
+tfoot td.highest, th.highest { background: rgba(79, 232, 220, 0.35); color: #fff; }
 
 .pill {
 	display: inline-flex;

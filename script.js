@@ -198,13 +198,14 @@ function renderTable() {
 
 	const totals = players.map(p => p.scores.reduce((a, b) => a + b, 0));
 	const grandTotal = totals.reduce((a, b) => a + b, 0);
+	const maxTotal = Math.max(...totals);
 	liveTotal.textContent = `Total points on the table: ${grandTotal}`;
 
 	const header = `
 		<thead>
 			<tr>
 				<th>Round</th>
-				${players.map((p, i) => `<th>${p.name}<button class="remove-player" data-index="${i}" aria-label="Remove ${p.name}">×</button></th>`).join('')}
+				${players.map((p, i) => `<th class="${totals[i] === maxTotal ? 'highest' : ''}">${p.name}<button class="remove-player" data-index="${i}" aria-label="Remove ${p.name}">×</button></th>`).join('')}
 			</tr>
 		</thead>
 	`;
@@ -221,7 +222,7 @@ function renderTable() {
 		<tfoot>
 			<tr>
 				<th>Totals</th>
-				${totals.map(total => `<td>${total}</td>`).join('')}
+				${totals.map(total => `<td class="${total === maxTotal ? 'highest' : ''}">${total}</td>`).join('')}
 			</tr>
 		</tfoot>
 	`;
